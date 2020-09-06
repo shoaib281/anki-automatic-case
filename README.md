@@ -1,6 +1,6 @@
 # lowercase_ify
 
-_Makes the input and answer for the type note lowercase on anki_
+_Makes the input and answer for the type note lowercase_
 
 #### Installation instructions
 
