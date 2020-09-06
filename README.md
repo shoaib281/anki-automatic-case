@@ -8,6 +8,8 @@ _Makes the input and answer for the type note lowercase_
 
 ### Show your support
 
+This is my first anki addon!
+
 Follow me on Twitter [@iamshabbs15](https://twitter.com/iamshabbs15), for updates, you can contact me there as well
 
 
