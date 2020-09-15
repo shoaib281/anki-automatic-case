@@ -28,9 +28,15 @@ def myTypeAnsAnswerFilter(self, buf: str) -> str:
     cor = cor.replace("\xa0", " ")
     cor = cor.strip()
     cor = cor.lower()
+    cor = cor.capitalize()
+    cor = cor.replace(" i ", " I ")
+    cor = cor.replace(" i'", " I'")
 
     given = self.typedAnswer
     given = given.lower()
+    given = given.capitalize()
+    given = given.replace(" i "," I ")
+    given = given.replace(" i'"," I'")
     # compare with typed answer
     res = self.correct(given, cor, showBad=False)
     # and update the type answer area
