@@ -1,6 +1,6 @@
-# lowercase_ify
+# anki-automatic-case
 
-_Makes the input and answer for the type note lowercase_
+_Capitalizes first letter and lower cases everything else_
 
 #### Installation instructions
 
