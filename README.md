@@ -2,6 +2,10 @@
 
 _Capitalizes first letter and lower cases everything else_
 
+#### What's the point?
+
+So you don't get those annoying grey or red highlights because of having a different case
+
 #### Installation instructions
 
 1. Go here: https://ankiweb.net/shared/info/1750883788
