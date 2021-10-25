@@ -1,12 +1,12 @@
 import re
 import html
 
-
 from aqt.reviewer import Reviewer
 from anki.hooks import addHook, wrap
 from anki.utils import stripHTML
+from aqt import mw
 
-
+config = mw.addonManager.getConfig(__name__)
 
 def myTypeAnsAnswerFilter(self, buf: str) -> str:
 
@@ -27,16 +27,20 @@ def myTypeAnsAnswerFilter(self, buf: str) -> str:
     cor = html.unescape(cor)
     cor = cor.replace("\xa0", " ")
     cor = cor.strip()
-    cor = cor.lower()
-    cor = cor.capitalize()
-    cor = cor.replace(" i ", " I ")
-    cor = cor.replace(" i'", " I'")
-
+    
     given = self.typedAnswer
-    given = given.lower()
-    given = given.capitalize()
-    given = given.replace(" i "," I ")
-    given = given.replace(" i'"," I'")
+
+    if not mw.col.decks.name(mw.reviewer.card.did) in config["decksIgnored"]:
+        given = given.lower()
+        given = given.capitalize()
+        given = given.replace(" i "," I ")
+        given = given.replace(" i'"," I'")
+
+        cor = cor.lower()
+        cor = cor.capitalize()
+        cor = cor.replace(" i ", " I ")
+        cor = cor.replace(" i'", " I'")
+
     # compare with typed answer
     res = self.correct(given, cor, showBad=False)
     # and update the type answer area
